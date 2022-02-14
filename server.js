@@ -28,9 +28,9 @@ app.set('view engine', 'ejs')
 
 
 //Routes
-app.use('api/files',fileRoutes);
-app.use('files', downloadPage)
-app.use('files/download', download);
+app.use('/api/files',fileRoutes);
+app.use('/files', downloadPage)
+app.use('/files/download', download);
 app.listen(app.get(port), () =>{
     console.log(`Listening on port ${PORT}`);
 })
