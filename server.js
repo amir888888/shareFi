@@ -31,6 +31,6 @@ app.set('view engine', 'ejs')
 app.use('/api/files',fileRoutes);
 app.use('/files', downloadPage)
 app.use('/files/download', download);
-app.listen(app.get(process.env.PORT || 5000), () =>{
+app.listen(process.env.PORT || 5000, () =>{
     console.log(`Listening on port ${PORT}`);
 })
