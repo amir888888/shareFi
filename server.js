@@ -9,6 +9,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 app.use(cors())
 app.use(express.static('public'));
+app.set('port', process.env.PORT || 3000);
 // app.set('port', (process.env.PORT || 5000));
 
 // app.use(bodyParser.json({ limit: '50mb' }));
@@ -31,6 +32,6 @@ app.set('view engine', 'ejs')
 app.use('/api/files',fileRoutes);
 app.use('/files', downloadPage)
 app.use('/files/download', download);
-app.listen(app.get(process.env.PORT || 5000), () =>{
+app.listen(app.get('port'), () =>{
    // console.log(`Listening on port ${PORT}`);
 })
