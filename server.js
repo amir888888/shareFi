@@ -16,7 +16,7 @@ app.set('port', process.env.PORT || 3000);
 // app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
 
 app.use(express.json({limit: '109mb'}));
-app.use(express.urlencoded({limit: "109mb", extended: true, parameterLimit:5000}));
+app.use(express.urlencoded({limit: "109mb", extended: false, parameterLimit:5000}));
 app.use(bodyParser.json({limit: '109mb'}));
 
 const connectDb = require('./config/db');
