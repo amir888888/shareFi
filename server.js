@@ -33,9 +33,9 @@ app.get('/',(req,res)=>{
 })
 
 //Routes
-app.get('api/files',require('./routes/file'));
-app.get('files', require('./routes/show'))
-app.get('files/download', require('./routes/download'));
+app.use('api/files',require('./routes/file'));
+app.use('files', require('./routes/show'))
+app.use('files/download', require('./routes/download'));
 app.listen(app.get('port'), () =>{
    // console.log(`Listening on port ${PORT}`);
 })
