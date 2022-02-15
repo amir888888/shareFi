@@ -33,9 +33,9 @@ app.get('/',(req,res)=>{
 })
 
 //Routes
-app.get('/api/files',fileRoutes);
-app.get('/files', downloadPage)
-app.get('/files/download', download);
+app.get('api/files',fileRoutes);
+app.get('files', downloadPage)
+app.get('files/download', download);
 app.listen(app.get('port'), () =>{
    // console.log(`Listening on port ${PORT}`);
 })
