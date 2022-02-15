@@ -2,8 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path')
-const fileRoutes = require('./routes/file');
-const downloadPage =  require('./routes/show')
+// const fileRoutes = require('./routes/file');
+// const downloadPage =  require('./routes/show')
 const download = require('./routes/download');
 const cors = require('cors')
 const bodyParser = require('body-parser')
@@ -33,9 +33,9 @@ app.get('/',(req,res)=>{
 })
 
 //Routes
-app.get('api/files',fileRoutes);
-app.get('files', downloadPage)
-app.get('files/download', download);
+app.get('api/files',require('./routes/file'));
+app.get('files', require('./routes/show'))
+app.get('files/download', require('./routes/download'));
 app.listen(app.get('port'), () =>{
    // console.log(`Listening on port ${PORT}`);
 })
